@@ -13,8 +13,8 @@
     <string name="about_text">\n一个简单的 \'打砖块\' 小游戏, 希望你能玩的开心^v^.\n</string>
 
     <string name="msg_ready">准备好了吗?</string>
-    <string name="msg_game_over">你输了!</string>
-    <string name="msg_winner">赢!</string>
+    <string name="msg_game_over">你输了</string>
+    <string name="msg_winner">太棒了</string>
 
     <string name="difficulty">难度: </string>
     <string name="ok">确认</string>
@@ -23,6 +23,5 @@
         <item>简单</item>
         <item>普通</item>
         <item>困难</item>
-        <item>极难</item>
     </string-array>
 </resources>

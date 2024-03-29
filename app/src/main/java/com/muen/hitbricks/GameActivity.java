@@ -135,25 +135,25 @@ public class GameActivity extends AppCompatActivity {
         switch (sDifficultyIndex) {
             case 0:                     // easy
                 ballSize = 2.0f;
-                paddleSize = 2.0f;
+                paddleSize = 3.5f;
                 scoreMultiplier = 0.75f;
                 maxLives = 4;
-                minSpeed = 200;
-                maxSpeed = 500;
+                minSpeed = 300;
+                maxSpeed = 600;
                 break;
 
             case 1:                     // normal
                 ballSize = 1;
-                paddleSize = 1.0f;
+                paddleSize = 2.0f;
                 scoreMultiplier = 1.0f;
                 maxLives = 3;
-                minSpeed = 300;
-                maxSpeed = 800;
+                minSpeed = 400;
+                maxSpeed = 900;
                 break;
 
             case 2:                     // hard
                 ballSize = 1.0f;
-                paddleSize = 0.8f;
+                paddleSize = 1.6f;
                 scoreMultiplier = 1.25f;
                 maxLives = 3;
                 minSpeed = 600;
