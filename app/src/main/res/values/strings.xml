@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">打砖块</string>
+
+    <string name="button_newGame">新游戏</string>
+    <string name="button_resumeGame">继续游戏</string>
+    <string name="button_about">关于</string>
+
+    <string name="checkbox_neverLoseBall">作弊模式</string>
+    <string name="checkbox_soundEffectsEnabled">声音开关</string>
+
+    <string name="text_highScoreLabel">最高分:</string>
+
+    <string name="about_text">\n一个简单的 \'打砖块\' 小游戏, 希望你能玩的开心^v^.\n</string>
+
+    <string name="msg_ready">准备好了吗?</string>
+    <string name="msg_game_over">你输了!</string>
+    <string name="msg_winner">赢!</string>
+
+    <string name="difficulty">难度: </string>
+    <string name="ok">确认</string>
+
+    <string-array name="difficulty_level_names">
+        <item>简单</item>
+        <item>普通</item>
+        <item>困难</item>
+        <item>极难</item>
+    </string-array>
+</resources>
