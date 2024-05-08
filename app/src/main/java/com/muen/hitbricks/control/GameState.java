@@ -9,6 +9,8 @@ import com.muen.hitbricks.model.BasicAlignedRect;
 import com.muen.hitbricks.model.Brick;
 import com.muen.hitbricks.model.OutlineAlignedRect;
 import com.muen.hitbricks.model.TexturedAlignedRect;
+import com.muen.hitbricks.rxbus.RxBus;
+import com.muen.hitbricks.rxbus.event.GameFinish;
 import com.muen.hitbricks.util.SoundResources;
 import com.muen.hitbricks.util.TextResources;
 
@@ -1119,12 +1121,14 @@ public class GameState {
                 mGameStatusMessageNum = TextResources.WINNER;
                 mIsAnimating = false;
                 advanceFrame = false;
+                RxBus.get().post(new GameFinish());
                 break;
 
             case GAME_LOST:
                 mGameStatusMessageNum = TextResources.GAME_OVER;
                 mIsAnimating = false;
                 advanceFrame = false;
+                RxBus.get().post(new GameFinish());
                 break;
 
             case GAME_PLAYING:

@@ -2,14 +2,19 @@ package com.muen.hitbricks;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.muen.hitbricks.control.GameState;
 import com.muen.hitbricks.gl.GameSurfaceView;
+import com.muen.hitbricks.rxbus.RxBus;
+import com.muen.hitbricks.rxbus.event.GameFinish;
 import com.muen.hitbricks.util.SoundResources;
 import com.muen.hitbricks.util.TextResources;
 
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import timber.log.Timber;
 
 /**
@@ -25,6 +30,7 @@ public class GameActivity extends AppCompatActivity {
     private static boolean sNeverLoseBall;
 
     private static boolean sSoundEffectsEnabled;
+    private Disposable rxBus;
 
     // The Activity has one View, a GL surface.
     private GameSurfaceView mGLView;
@@ -60,6 +66,20 @@ public class GameActivity extends AppCompatActivity {
         // after this point must be guarded with some form of synchronization.
         mGLView = new GameSurfaceView(this, mGameState, textConfig);
         setContentView(mGLView);
+
+        rxBus = RxBus.get().toIOSubscribe(GameFinish.class, new Consumer<GameFinish>() {
+            @Override
+            public void accept(GameFinish gameFinish) throws Exception {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                }, 2000);
+
+            }
+        });
     }
 
     @Override
@@ -123,6 +143,14 @@ public class GameActivity extends AppCompatActivity {
 
         super.onResume();
         mGLView.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(rxBus!= null){
+            rxBus.dispose();
+        }
     }
 
     /**
