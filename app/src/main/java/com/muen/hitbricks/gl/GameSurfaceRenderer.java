@@ -202,7 +202,7 @@ public class GameSurfaceRenderer implements GLSurfaceView.Renderer {
 
         // Draw the various elements.  These are all BasicAlignedRect.
         BasicAlignedRect.prepareToDraw();
-        gameState.drawBorders();
+        //gameState.drawBorders();
         gameState.drawBricks();
         gameState.drawPaddle();
         BasicAlignedRect.finishedDrawing();

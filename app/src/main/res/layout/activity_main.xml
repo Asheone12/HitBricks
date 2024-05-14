@@ -1,71 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
+    android:layout_weight="1"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/text_highScoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:orientation="horizontal">
+            android:layout_marginEnd="4dp"
+            android:text="@string/text_highScoreLabel"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/text_highScoreLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="@string/text_highScoreLabel"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/text_highScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button_newGame"
+        <TextView
+            android:id="@+id/text_highScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:onClick="clickNewGame"
-            android:text="@string/button_newGame"
-            android:textSize="40sp" />
-
-        <Button
-            android:id="@+id/button_resumeGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:onClick="clickResumeGame"
-            android:text="@string/button_resumeGame"
-            android:textSize="40sp" />
-
-        <Button
-            android:id="@+id/button_about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="clickAbout"
-            android:text="@string/button_about"
             android:textSize="30sp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button_newGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_blue_gradient_common"
+        android:onClick="clickNewGame"
+        android:text="@string/button_newGame"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/highScore" />
+
+    <Button
+        android:id="@+id/button_resumeGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_blue_gradient_common"
+        android:onClick="clickResumeGame"
+        android:text="@string/button_resumeGame"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_newGame" />
+
+    <Button
+        android:id="@+id/button_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_blue_gradient_common"
+        android:onClick="clickAbout"
+        android:text="@string/button_about"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_resumeGame" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/button_newGame">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -77,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/difficulty"
-                android:textSize="30sp" />
+                android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/spinner_difficultyLevel"
@@ -92,7 +111,7 @@
             android:layout_marginBottom="8dp"
             android:onClick="clickNeverLoseBall"
             android:text="@string/checkbox_neverLoseBall"
-            android:textSize="30sp" />
+            android:textSize="20dp" />
 
         <CheckBox
             android:id="@+id/checkbox_soundEffectsEnabled"
@@ -100,8 +119,8 @@
             android:layout_height="wrap_content"
             android:onClick="clickSoundEffectsEnabled"
             android:text="@string/checkbox_soundEffectsEnabled"
-            android:textSize="30sp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

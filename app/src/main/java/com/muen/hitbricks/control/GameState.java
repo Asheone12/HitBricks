@@ -117,7 +117,7 @@ public class GameState {
      * score.
      */
     private static final float SCORE_TOP = ARENA_HEIGHT - BORDER_WIDTH * 2;
-    private static final float SCORE_RIGHT = ARENA_WIDTH - BORDER_WIDTH * 2;
+    private static final float SCORE_RIGHT = ARENA_WIDTH - BORDER_WIDTH * 8;
     private static final float SCORE_HEIGHT_PERC = 5 / 100.0f;
 
     /*
