@@ -62,8 +62,8 @@ public class GameState {
      * really matters is the proportion of width to height, since that defines the shape of
      * the play area.
      */
-    public static final float ARENA_WIDTH = 768.0f;
-    public static final float ARENA_HEIGHT = 1024.0f;
+    public static final float ARENA_WIDTH = 800.0f;
+    public static final float ARENA_HEIGHT = 800.0f;
 
     /*
      * The arena looks something like this (remember, GL coordinates start in lower-left corner):
